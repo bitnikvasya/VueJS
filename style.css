@@ -1,3 +1,12 @@
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 0.5;
+	}
+}
+
 .detailed-car-image {
 	height: 200px;
 }
@@ -10,8 +19,8 @@
 	height: 36px;
 }
 
-.modal {
-	display: block !important;
+.modal.show {
+	display: block;
 }
 
 .phone-enter-active,
@@ -26,34 +35,18 @@
 }
 
 .modal-enter-active,
-.modal-leave-active {
-	transition: all 0.5s;
+.fade-enter-active {
+	animation: 0.5s fade forwards;
+}
+
+.modal-leave-active,
+.fade-leave-active {
+	animation: 0.5s fade reverse; 
 }
 
 .modal-enter,
-.modal-leave-to {
-	transform: translateY(-100px);
-}
-
-.fade-enter-active {
-	animation: 1s fade forwards; 
-}
-
-.fade-leave-active {
-	animation: 1s fade reverse; 
-}
-
+.modal-leave-to,
 .fade-enter,
 .fade-leave-to {
-	transform: translateY(-150px);
 	opacity: 0;
-}
-
-@keyframes fade {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 0.5;
-	}
 }
